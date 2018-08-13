@@ -1,7 +1,11 @@
 use std::cmp::{max, min};
 
+mod sort;
+
 fn main() {
-    println!("Hello, world!");
+    let input = vec![5, 2, 4, 6, 1, 3];
+    let actual = sort::insertion_sort(input);
+    println!("{:?}", actual);
 }
 
 fn select_top(n: usize, mut arr: Vec<i64>) -> Vec<i64> {
@@ -9,8 +13,6 @@ fn select_top(n: usize, mut arr: Vec<i64>) -> Vec<i64> {
     arr.reverse();
     arr.iter().take(n).map(|x| *x).collect()
 }
-
-const MAX: u64 = 200000;
 
 fn maximux_profit(n: usize, mut arr: Vec<i64>) -> i64 {
     if arr.len() == 0 {
